@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>Embark</title>
+		<link rel='stylesheet' href="../static/styles/css/style.css" type="text/css">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600italic,700' rel='stylesheet' type='text/css'>
+
+	</head>
+	<body>
+		<script type='text/javascript'>
+
+			function selectImg(delta) {
+				document.getElementById("rangePref").setAttribute('value',delta);
+
+				if (delta=="inL") {
+					document.getElementById("stamp_inL").style.opacity = 1;
+					document.getElementById("stamp_doM").style.opacity = 0.45;
+				}
+				else {
+					document.getElementById("stamp_doM").style.opacity = 1;
+					document.getElementById("stamp_inL").style.opacity = 0.45;
+				}
+			}
+
+			function submitForm () {
+				document.getElementById('query1').submit();
+			}
+
+			document.onreadystatechange = function () {
+  				var state = document.readyState
+  				if (state == 'interactive') {
+       				document.getElementById('contents').style.visibility="hidden";
+  				} else if (state == 'complete') {
+      			setTimeout(function(){
+         		document.getElementById('interactive');
+         		document.getElementById('load').style.visibility="hidden";
+         		document.getElementById('contents').style.visibility="visible";
+      			},1000);
+  			}
+		}
+		</script>
+		<center>
+		<div class='varcont' style='background-color: #158ECE; color: #fff;'>
+
+			<!-- Display Loader while feed loads-->
+			<div id="load"></div>
+
+			<div class='feed' style='padding: 5%'>
+			<p align='center'>Your transaction has been saved.  <br></p>
+			<div class='logoset'>
+					Made in 2016 with the Amedeus<sup>®</sup> Travel Innovation Sandbox API at <br><br>
+					<img src='https://hackillinois.org/assets/img/logo.png'>
+			</div>	
+			</div>
+			
+		</div>
+		</center>
+	</body>
+</htmL>
