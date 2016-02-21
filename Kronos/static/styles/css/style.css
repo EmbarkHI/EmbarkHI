@@ -1,0 +1,325 @@
+
+@media (min-width: 720px) {
+	.varcont {
+		margin-top: 50px;
+  		width: 350px;
+  		height: 500px;
+  		border-radius: 8px;
+  		position: relative;
+  		border: 1px solid #000;
+  		
+  	}
+}
+
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+	body {
+		margin: 0px;
+	}
+
+	.varcont {
+  		width: 100%;
+  		height: 100%;
+  		margin-top: 0px;		
+  	}
+}
+
+
+.varcont {
+  background-color: #EFEAEA;
+  overflow-y: auto;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+
+}
+
+.rabat {
+	height: 55%;
+    background-image: url('../img/bg.jpg');
+    background-size: cover;
+    z-index: 0;
+}
+
+img.logo {
+	height: 30%;
+	margin-top: -40px;
+}
+
+.button {
+
+	width: 80%;
+	border: 2px solid #113356;
+	margin-top: 20%;
+	font-size: 25px;
+	padding: 11px;
+	text-transform: uppercase;
+	position: absolute;
+	margin: 0 auto;
+	bottom:5%;
+	left:0; right:0;
+	color: #113356;
+	border-radius: 4px;
+}
+
+.button:hover {
+	 background-color: #E0DEDE
+}
+
+
+.cardgrid {
+	display: table;
+	border-spacing: 5px;
+}
+
+.cardgrid .card {
+	
+	border: 2px solid #113356;
+	min-height: 200px;
+	min-width: 200px;
+	display: table-cell;
+	border-radius: 15%;
+
+}
+#stamp_inL {
+	opacity: 1;
+}
+
+#stamp_doM {
+	opacity: 0.45;
+}
+
+#stamp_trS {
+  opacity: 1;
+}
+
+#stamp_gtW {
+  opacity: 0.45;
+}
+
+table.stampgrid {
+
+	padding: 10px;
+}
+
+table.stampgrid td img {
+	height: 150px;
+	width: 150px;
+}
+
+table.stampgrid tr.catLast {
+	margin-bottom: 10px;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 12.8px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  background: #ac51b5;
+  border-radius: 25px;
+  border: 0px solid #000101;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 39px;
+  border-radius: 7px;
+  background: #65001c;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3.6px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #ac51b5;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 12.8px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  background: #ac51b5;
+  border-radius: 25px;
+  border: 0px solid #000101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 39px;
+  border-radius: 7px;
+  background: #65001c;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 12.8px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 39px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #ac51b5;
+  border: 0px solid #000101;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: #ac51b5;
+  border: 0px solid #000101;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 39px;
+  border-radius: 7px;
+  background: #65001c;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #ac51b5;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #ac51b5;
+}
+
+.varcont::-webkit-scrollbar-track
+{
+  display:NONE;
+}
+
+.varcont::-webkit-scrollbar
+{
+  display: none;
+}
+
+.varcont::-webkit-scrollbar-thumb
+{
+  background-color: #000000;
+  border: 2px solid #555555;
+}
+
+.city-result .snapcity {
+
+  height: 200px;
+  width: 100%;
+  background-size: cover;
+} 
+
+.city-result {
+  background-color: #fff;
+  width: 250px;
+  border: 1px solid #c5c5c5;
+-webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+-moz-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+margin-bottom: 5%;
+}
+
+input[type=date], input[type=text] {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+    border-bottom: 2px solid #ADB7B9;
+    padding-bottom: 5px;
+}
+
+input[type=date]:focus, input[type=text]:focus {
+
+    border: none;
+    border-bottom: 2px solid #28BCDA;
+    outline: none;
+}
+
+#load{
+    width:350px;
+    height:500px;
+    position:fixed;
+    z-index:9999;
+    background:url("https://www.creditmutuel.fr/cmne/fr/banques/webservices/nswr/images/loading.gif") no-repeat center center rgba(0,0,0,0.25)
+}
+
+p.cityLabel {
+  text-transform: capitalize;
+}
+
+.header {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  border-bottom: 5px solid #4CAF50;
+}
+
+p.h1city {
+  font-size: 23px;
+}
+
+table.cost-brk {
+  border-collapse: separate;
+}
+
+table.cost-brk tr td{
+  border: 1px solid #000;
+}
+
+table.stampgrid tr.poI img {
+  height: 100px;
+  width: 100px;
+}
+
+.logoset {
+  position: absolute;
+  margin: 0 auto;
+  bottom:5%;
+  left:0; right:0;
+}
+
+.logoset img {
+  height: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn_chck {
+  height: 50px;
+  width: 50px;
+  background-color: #4CAF50;
+  position: absolute;
+  right: 10%;
+  top: 2%;
+  border-radius: 50%;
+}
+
+.btn_chck img {
+  height: 35px;
+  width: 35px;
+  margin-top: 15%;
+}
+
+.btn_chck:hover {
+  background-color: #598E5B;
+};
