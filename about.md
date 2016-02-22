@@ -22,6 +22,7 @@
 ## Walkthrough
 
 <img src = 'http://i.imgur.com/8GgiE3w.gif' title = 'Walkthrough' width='' alt='Walkthrough' />
+
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 
