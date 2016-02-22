@@ -19,6 +19,9 @@
 ## What's next for Embark
 >The major transition we’d look to make would be from a simple indexing system to one where transactions can be made. Even if that isn’t possible, we’d like to perhaps output travel plan data that can be used by other applications that support transactions. This would add a greater depth to the indexing, as users could use the data prepared by Embark to simply pay for the travel plan without a lot of effort.
 
+## Walkthrough
 
+<img src = 'http://i.imgur.com/8GgiE3w.gif' title = 'Walkthrough' width='' alt='Walkthrough' />
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 
