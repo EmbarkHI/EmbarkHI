@@ -3,7 +3,7 @@ from Kronos import app
 import requests, demjson
 from urllib2 import urlopen
 import json, datetime, xlrd
-
+import config 
 international = False
 departDate = datetime.date.today()
 arriveDate = departDate
@@ -15,6 +15,7 @@ itineary = ""
 categoryArray = []
 chosen = dict()
 costDict = {}
+apikey = config.amadeus_apikey
 
 @app.route('/')
 def home(): #Function to render index page
@@ -106,11 +107,11 @@ def define_list():#Matching cities to countries; Assigning every city as valid.
 
 def country_from_city(city):#Ran only once to get co-ordinates of each city using POI
 	city = city.replace (" ", "%20")
-	r = requests.get('https://api.sandbox.amadeus.com/v1.2/points-of-interest/yapq-search-text?apikey=WCC0Tn8fJ5hScMw7NTDDAAkjydFLOYTf&city_name={0}'.format(city))
+	r = requests.get('https://api.sandbox.amadeus.com/v1.2/points-of-interest/yapq-search-text?apikey=' + apikey + '&city_name={0}'.format(city))
 	the_page = r.text
 	the_page = demjson.decode(the_page)
 	while ("status" in the_page):
-		r = requests.get('https://api.sandbox.amadeus.com/v1.2/points-of-interest/yapq-search-text?apikey=WCC0Tn8fJ5hScMw7NTDDAAkjydFLOYTf&city_name={0}'.format(city))
+		r = requests.get('https://api.sandbox.amadeus.com/v1.2/points-of-interest/yapq-search-text?apikey=' + apikey + '&city_name={0}'.format(city))
 		the_page = r.text
 		the_page = demjson.decode(the_page)
 	l1 = the_page["points_of_interest"]
@@ -149,7 +150,7 @@ def choice_budget():
 	travelcosts = dict()
 	lattitude = (str)(loc[0])
 	longitude = (str)(loc[1])
-	re = requests.get('https://api.sandbox.amadeus.com/v1.2/airports/nearest-relevant?apikey=WCC0Tn8fJ5hScMw7NTDDAAkjydFLOYTf&latitude=' + (lattitude) + '&longitude=' + (longitude))
+	re = requests.get('https://api.sandbox.amadeus.com/v1.2/airports/nearest-relevant?apikey=' + apikey + '&latitude=' + (lattitude) + '&longitude=' + (longitude))
 	page = re.text
 	page = demjson.decode(page)
 	d_code = (page[0])["airport"]
@@ -160,14 +161,14 @@ def choice_budget():
 			if (1==validCities[i]):
 				city = cities[i].replace (" ", "%20")
 				print city
-				re = requests.get("https://api.sandbox.amadeus.com/v1.2/airports/autocomplete?apikey=WCC0Tn8fJ5hScMw7NTDDAAkjydFLOYTf&term={0}".format(city)) 
+				re = requests.get("https://api.sandbox.amadeus.com/v1.2/airports/autocomplete?apikey=" + apikey + "&term={0}".format(city)) 
 				page = re.text
 				page = demjson.decode(page)
 				if page == []:
 					validCities[i] = 0
 				else:
 					a_code = page[0]["value"]
-					re = requests.get("https://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?apikey=WCC0Tn8fJ5hScMw7NTDDAAkjydFLOYTf&origin="+d_code+"&destination="+a_code+"&departure_date="+str(departDate)+"&return_date="+str(arriveDate))
+					re = requests.get("https://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?apikey=" + apikey + "&origin="+d_code+"&destination="+a_code+"&departure_date="+str(departDate)+"&return_date="+str(arriveDate))
 					page = re.text
 					page = demjson.decode(page)
 					if ("status" in page):
@@ -178,7 +179,7 @@ def choice_budget():
 						price = results[0]["fare"]["total_price"]
 						airfare = (float)(price)
 
-						re = requests.get("https://api.sandbox.amadeus.com/v1.2/hotels/search-airport?apikey=WCC0Tn8fJ5hScMw7NTDDAAkjydFLOYTf&location="+a_code+"&check_in="+str(departDate)+"&check_out="+str(arriveDate))
+						re = requests.get("https://api.sandbox.amadeus.com/v1.2/hotels/search-airport?apikey=" + apikey + "&location="+a_code+"&check_in="+str(departDate)+"&check_out="+str(arriveDate))
 						page = re.text
 						page = demjson.decode(page)
 						results = page["results"]
@@ -265,12 +266,12 @@ def read_categories(filename):
 def pointsOfInterest(city):
 	global images, titles, links
 	city_name = city.replace(" ","%20")
-	r = requests.get('https://api.sandbox.amadeus.com/v1.2/points-of-interest/yapq-search-text?apikey=WCC0Tn8fJ5hScMw7NTDDAAkjydFLOYTf&city_name='+city_name)
+	r = requests.get('https://api.sandbox.amadeus.com/v1.2/points-of-interest/yapq-search-text?apikey=' + apikey + '&city_name='+city_name)
 	print r.url
 	the_page = r.text
 	the_page = demjson.decode(the_page)
 	while ("status" in the_page):
-		r = requests.get('https://api.sandbox.amadeus.com/v1.2/points-of-interest/yapq-search-text?apikey=WCC0Tn8fJ5hScMw7NTDDAAkjydFLOYTf&city_name={0}'.format(city_name))
+		r = requests.get('https://api.sandbox.amadeus.com/v1.2/points-of-interest/yapq-search-text?apikey=' + apikey + '&city_name={0}'.format(city_name))
 		the_page = r.text
 		the_page = demjson.decode(the_page)
 	l1 = the_page["points_of_interest"]
