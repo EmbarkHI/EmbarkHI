@@ -15,15 +15,16 @@ It uses the <a href="https://sandbox.amadeus.com/api-catalog">Amadeus API</a> to
 ```
 cd EmbarkHI
 ```
-4. Run the app by typing:
+Run the app by typing:
 ```
 python run.py
 ```
-5. Open up your favorite browser to:
+Open up your favorite browser to:
 ```
 localhost:5000
 ```
-6. Voila! You're good to go. 
+
+Voila, you're all set!
 
 
 ## To do:
