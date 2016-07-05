@@ -31,6 +31,11 @@ Voila, you're all set!
 1. Make it faster. (Lesser queries)
 2. Put it up on heroku
 
+## Walkthrough
+
+<img src = 'http://i.imgur.com/8GgiE3w.gif' title = 'Walkthrough' width='' alt='Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
 Graphic Attributions
   Icons from the Noun Project, licensed under the Creative Commons 3.0 License
-
